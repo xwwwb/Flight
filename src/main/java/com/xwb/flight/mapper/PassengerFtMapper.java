@@ -1,6 +1,7 @@
 package com.xwb.flight.mapper;
 
 import com.xwb.flight.domain.PassengerFt;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface PassengerFtMapper {
     public void del(Integer pid);
 
     public void insert(PassengerFt passengerFt);
+
+    public List<PassengerFt> getPassByNameOrPhone(@Param("pname") String pname, @Param("phone") String phone);
 }

@@ -46,4 +46,11 @@ public class PassengerFtController {
     public String toAdd(){
         return "passenger/add";
     }
+
+    @RequestMapping("/getPassByNameOrPhone")
+    public String getPassByNameOrPhone(String pname,String phone, Model model) {
+        List<PassengerFt> list = passengerFtService.getPassByNameOrPhone(pname, phone);
+        model.addAttribute("list", list);
+        return "passenger/list";
+    }
 }

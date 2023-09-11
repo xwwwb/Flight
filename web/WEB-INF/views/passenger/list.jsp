@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../common/css/sapar.css" />
-    <link rel="stylesheet" type="text/css" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="/resources/common/css/sapar.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/common/css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/user.css" />
-    <script type="text/javascript" src="../../common/js/jquery.js"></script>
-    <script type="text/javascript" src="../../common/js/sapar.js"></script>
-    <script type="text/javascript" src="../../common/js/WdatePicker.js"></script>
+    <script type="text/javascript" src="/resources/common/js/jquery.js"></script>
+    <script type="text/javascript" src="/resources/common/js/sapar.js"></script>
+    <script type="text/javascript" src="/resources/common/js/WdatePicker.js"></script>
     <title>常旅客管理</title>
 </head>
 
@@ -24,20 +24,22 @@
         </div>
         <div class="subfiled-content">
             <div class="search-box clearfix">
+                <form action="getPassByNameOrPhone">
                 <div class="kv-item clearfix">
                     <label>姓名：</label>
                     <div class="kv-item-content">
-                        <input type="text" placeholder="姓名">
+                        <input type="text" name="pname" placeholder="姓名">
                     </div>
                 </div>
                 <div class="kv-item clearfix">
                     <label>手机：</label>
                     <div class="kv-item-content">
-                        <input type="text" placeholder="手机">
+                        <input type="text" name="phone" placeholder="手机">
                     </div>
                 </div>
 
-                <a href="javascript:;" class="sapar-btn sapar-btn-recom query-btn">查询</a>
+                <input type="submit" class="sapar-btn sapar-btn-recom query-btn" value="查询" />
+                </form>
             </div>
 
 

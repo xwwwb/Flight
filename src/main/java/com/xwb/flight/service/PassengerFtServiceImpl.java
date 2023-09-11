@@ -26,4 +26,8 @@ public class PassengerFtServiceImpl {
     public void save(PassengerFt passengerFt) {
         passengerFtMapper.insert(passengerFt);
     }
+
+    public List<PassengerFt> getPassByNameOrPhone(String pname, String phone) {
+        return passengerFtMapper.getPassByNameOrPhone(pname, phone);
+    }
 }

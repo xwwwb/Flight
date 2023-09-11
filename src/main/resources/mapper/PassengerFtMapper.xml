@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.xwb.flight.mapper.PassengerFtMapper">
     <select id="select" resultType="com.xwb.flight.domain.PassengerFt">
         select * from passenger_ft where username = "Jerry"
@@ -15,4 +16,20 @@
         insert into passenger_ft(pname,cardnum,phone,username,add_time,status)
         values(#{pname},#{cardnum},#{phone},"Jerry",now(),0);
     </insert>
+
+    <select id="getPassByNameOrPhone" resultType="com.xwb.flight.domain.PassengerFt">
+        <!-- bind :定义一个变量-->
+        <bind name="newPname" value="'%'+pname+'%'"/>
+        <bind name="newPhone" value="'%'+phone+'%'"/>
+        select * from passenger_ft
+        <!-- 如果没有满足的条件 不会产生where 关键字  去除多余的or/and-->
+        <where>
+            <if test="pname != null and pname != '' ">
+                pname like  #{newPname}
+            </if>
+            <if test="phone != null and phone != ''">
+                and  phone like #{newPhone}
+            </if>
+        </where>
+    </select>
 </mapper>
