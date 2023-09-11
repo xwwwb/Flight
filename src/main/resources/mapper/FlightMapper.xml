@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xwb.flight.mapper.FlightMapper">
+    <resultMap id="flightMap" type="com.xwb.flight.domain.Flight">
+        <id column="fid" property="fid"/>
+        <result column="flight_num" property="flightNum"/>
+        <result column="flight_date" property="flightDate"/>
+        <result column="departure_city" property="departureCity"/>
+        <result column="arrival_city" property="arrivalCity"/>
+        <result column="departure_time" property="departureTime"/>
+        <result column="arrival_time" property="arrivalTime"/>
+        <result column="ticket_price" property="ticketPrice"/>
+        <result column="ticket_left" property="ticketLeft"/>
+
+    </resultMap>
+
+     <select id="select" resultMap="flightMap" >
+        select * from flight
+     </select>
+</mapper>
