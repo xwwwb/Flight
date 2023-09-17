@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/resources/common/css/sapar.css" />
     <link rel="stylesheet" type="text/css" href="/resources/common/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="css/query_order_step.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/query_order_step.css" />
     <script type="text/javascript" src="/resources/common/js/jquery.js"></script>
     <script type="text/javascript" src="/resources/common/js/sapar.js"></script>
     <script type="text/javascript" src="/resources/common/js/WdatePicker.js"></script>
@@ -45,26 +45,26 @@
                 </ol>
             </div>
 
-            <form name="f1" id="f1" action="?m=system&amp;c=myInfo&amp;a=updateInfo&amp;type=1" method="post">
+            <form name="f1" id="f1" action="getFlightByAddressAndTime" method="get">
                 <div class="search-box clearfix">
 
                     <div class="content">
                         <div class="kv-item clearfix">
                             <label>出发城市：</label>
                             <div class="kv-item-content">
-                                <input type="text" placeholder="出发城市">
+                                <input type="text" name="departureCity" placeholder="出发城市">
                             </div>
                         </div>
                         <div class="kv-item clearfix">
                             <label>到达城市：</label>
                             <div class="kv-item-content">
-                                <input type="text" placeholder="到达城市">
+                                <input type="text" name="arrivalCity" placeholder="到达城市">
                             </div>
                         </div>
                         <div class="kv-item clearfix">
                             <label>出发日期：</label>
                             <div class="kv-item-content">
-                                <input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                                <input type="text" name="flightDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})"
                                        placeholder="出发日期">
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                                 <td>${ft.ticketPrice}</td>
                                 <td>${ft.ticketLeft}</td>
                                 <td>
-                                    <a href="order_step2.html" class="">预订机票</a>
+                                    <a href="step2?fid=${ft.fid}" class="">预订机票</a>
                                 </td>
                             </tr>
                         </c:forEach>

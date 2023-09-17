@@ -14,4 +14,5 @@ public interface PassengerFtMapper {
     public void insert(PassengerFt passengerFt);
 
     public List<PassengerFt> getPassByNameOrPhone(@Param("pname") String pname, @Param("phone") String phone);
+    public List<PassengerFt> getPassengerFtByUsername(String username);
 }

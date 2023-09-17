@@ -19,4 +19,26 @@
      <select id="select" resultMap="flightMap" >
         select * from flight
      </select>
+
+    <select id="getFlightByAddressAndTime" resultType="com.xwb.flight.domain.Flight"  resultMap="flightMap" >
+        <bind name="newDepartureCity" value="'%'+departureCity+'%'"/>
+        <bind name="newArrivalCity" value="'%'+arrivalCity+'%'"/>
+        select * from flight
+        <where>
+            <if test="departureCity !=null  and departureCity != '' ">
+                departure_city like  #{newDepartureCity}
+            </if>
+            <if test="flightDate != null">
+                and flight_date = #{flightDate}
+            </if>
+            <if test="arrivalCity !=null  and arrivalCity != '' ">
+                and arrival_city like #{newArrivalCity}
+            </if>
+        </where>
+
+    </select>
+
+    <select id="getOneFlightByFid" resultType="com.xwb.flight.domain.Flight" resultMap="flightMap" >
+        select * from flight where fid = #{fid}
+    </select>
 </mapper>

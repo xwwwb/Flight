@@ -1,6 +1,8 @@
 package com.xwb.flight.domain;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Flight {
@@ -9,6 +11,7 @@ public class Flight {
     //    flight_num   varchar
     private String flightNum;
     //    flight_date  date
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date flightDate;
     //    departure_city   varchar
     private String departureCity;

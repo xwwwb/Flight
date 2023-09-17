@@ -32,4 +32,8 @@
             </if>
         </where>
     </select>
+
+    <select id="getPassengerFtByUsername" resultType="com.xwb.flight.domain.PassengerFt">
+        select * from passenger_ft where username = #{username}
+    </select>
 </mapper>

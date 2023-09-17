@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/resources/common/css/sapar.css" />
     <link rel="stylesheet" type="text/css" href="/resources/common/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="css/user.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/common/css/user.css" />
     <script type="text/javascript" src="/resources/common/js/jquery.js"></script>
     <script type="text/javascript" src="/resources/common/js/sapar.js"></script>
     <script type="text/javascript" src="/resources/common/js/WdatePicker.js"></script>
@@ -54,6 +54,7 @@
                     <table>
                         <thead>
                         <tr>
+                            <th>编号</th>
                             <th>姓名</th>
                             <th>证件号码</th>
                             <th>手机号码</th>
@@ -63,6 +64,7 @@
                         <tbody>
                         <c:forEach items="${list}" var="pf">
                             <tr>
+<td>${pf.pid}</td>
                                 <td>${pf.pname}</td>
                                 <td>${pf.cardnum}</td>
                                 <td>${pf.phone}</td>

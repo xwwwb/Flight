@@ -8,4 +8,8 @@ import java.util.List;
 @Repository("flightMapper")
 public interface FlightMapper {
     public List<Flight> select();
+
+    public List<Flight> getFlightByAddressAndTime(Flight flight);
+
+    public Flight getOneFlightByFid(int fid);
 }

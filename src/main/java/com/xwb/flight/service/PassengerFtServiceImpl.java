@@ -30,4 +30,8 @@ public class PassengerFtServiceImpl {
     public List<PassengerFt> getPassByNameOrPhone(String pname, String phone) {
         return passengerFtMapper.getPassByNameOrPhone(pname, phone);
     }
+
+    public  List<PassengerFt> getPassengerFtByUsername(String username){
+        return  passengerFtMapper.getPassengerFtByUsername(username);
+    }
 }

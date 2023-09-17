@@ -17,4 +17,13 @@ public class FlightServiceImpl {
     public List<Flight> select(){
         return flightMapper.select();
     }
+
+    public List<Flight> getFlightByAddressAndTime(Flight flight){
+        return flightMapper.getFlightByAddressAndTime(flight);
+    }
+
+    public Flight getOneFlightByFid(int fid){
+        Flight flight = flightMapper.getOneFlightByFid(fid);
+        return flight;
+    }
 }
