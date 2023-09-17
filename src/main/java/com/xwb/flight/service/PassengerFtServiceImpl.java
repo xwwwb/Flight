@@ -34,4 +34,8 @@ public class PassengerFtServiceImpl {
     public  List<PassengerFt> getPassengerFtByUsername(String username){
         return  passengerFtMapper.getPassengerFtByUsername(username);
     }
+
+    public PassengerFt getPassengerFtByPid(int pid){
+        return passengerFtMapper.getPassengerFtByPid(pid);
+    }
 }

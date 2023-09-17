@@ -1,9 +1,30 @@
 package com.xwb.flight.domain;
 
+import com.xwb.flight.domain.UserFt;
+
+//封装passenger_ft表对应的实体类 封装常用旅客信息
 public class PassengerFt {
-    private  Integer pid;
+    //     属性和方法
+//    pid  int
+    private Integer pid;
+    //    pname    varchar
     private String pname;
+    //    cardnum  varchar
     private String cardnum;
+    //    phone    varchar
+    private String phone;
+    //    username varchar  业务主键
+    private String username;
+    //多对一
+    private UserFt userFt;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Integer getPid() {
         return pid;
@@ -45,9 +66,6 @@ public class PassengerFt {
         this.userFt = userFt;
     }
 
-    private String phone;
-    private UserFt userFt;
-
     @Override
     public String toString() {
         return "PassengerFt{" +
@@ -55,6 +73,7 @@ public class PassengerFt {
                 ", pname='" + pname + '\'' +
                 ", cardnum='" + cardnum + '\'' +
                 ", phone='" + phone + '\'' +
+                ", username='" + username + '\'' +
                 ", userFt=" + userFt +
                 '}';
     }

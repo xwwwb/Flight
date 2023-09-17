@@ -43,7 +43,7 @@ public class FlightController {
     @RequestMapping("/step2")
     public String step2(int fid,Model model){
         Flight flight = flightService.getOneFlightByFid(fid);
-        List<PassengerFt> list = passengerFtServiceImpl.getPassengerFtByUsername("Jerry");
+        List<PassengerFt> list = passengerFtServiceImpl.getPassengerFtByUsername("ls");
         model.addAttribute("ft",flight);
         model.addAttribute("list",list);
         return  "flight/step2";

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xwb.flight.mapper.OrderMapper">
+    <insert id="insertOrder">
+        INSERT INTO `flightorder` (`oid`, `order_time`, `order_amount`, `order_status`, `username`, `fid`, `pid`)
+        VALUES (#{oid}, now(), #{orderAmount} ,1, #{username}, #{fid}, #{pid});
+    </insert>
+    <resultMap id="order_pass_flight" type="com.xwb.flight.domain.Order" autoMapping="true">
+        <id column="oid" property="oid"/>
+        <result column="order_amount" property="orderAmount"/>
+        <association property="flight" javaType="com.xwb.flight.domain.Flight" autoMapping="true">
+            <id column="fid" property="fid"/>
+        </association>
+        <association property="passengerFt" javaType="com.xwb.flight.domain.PassengerFt" autoMapping="true">
+            <id column="pid" property="pid"/>
+        </association>
+    </resultMap>
+    <select id="getOneOrder" resultMap="order_pass_flight" >
+        select * from flightorder fo,flight f,passenger_ft pft
+        where fo.fid = f.fid
+          and   fo.pid = pft.pid
+          and  fo.oid = #{oid}
+    </select>
+    <update id="updateOrderStatusByOidInt">
+        update flightorder set order_status = 2 where oid = #{oid};
+    </update>
+</mapper>

@@ -15,4 +15,6 @@ public interface PassengerFtMapper {
 
     public List<PassengerFt> getPassByNameOrPhone(@Param("pname") String pname, @Param("phone") String phone);
     public List<PassengerFt> getPassengerFtByUsername(String username);
+
+    public PassengerFt getPassengerFtByPid(int pid);
 }

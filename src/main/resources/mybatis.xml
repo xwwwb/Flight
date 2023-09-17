@@ -2,6 +2,10 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--    显示日志-->
+    <settings>
+        <setting name="logImpl" value="org.apache.ibatis.logging.stdout.StdOutImpl"/>
+    </settings>
     <!--PageHelper分页插件-->
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor">
@@ -12,6 +16,9 @@
     <mappers>
         <mapper resource="./mapper/PassengerFtMapper.xml"/>
         <mapper resource="./mapper/FlightMapper.xml"/>
+        <mapper resource="./mapper/OrderMapper.xml"/>
     </mappers>
+
+
 
 </configuration>

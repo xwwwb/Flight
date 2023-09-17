@@ -86,7 +86,8 @@
                     <h2>选择乘机人</h2>
                 </div>
                 <div class="subfiled-content">
-                    <form class="saper-form" action="order_step3.html">
+                    <form class="saper-form" action="/order/step3">
+                        <input type="hidden" name="fid" value="${ft.fid}" >
                         <div class="kv-item clearfix">
                             <label>旅客选择：</label>
                             <div class="kv-item-content">
