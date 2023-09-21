@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository("passengerFtMapper")
 public interface PassengerFtMapper {
-    public List<PassengerFt> select();
+    public List<PassengerFt> select(String username);
 
     public void del(Integer pid);
 

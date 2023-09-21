@@ -5,7 +5,7 @@
 
 <mapper namespace="com.xwb.flight.mapper.PassengerFtMapper">
     <select id="select" resultType="com.xwb.flight.domain.PassengerFt">
-        select * from passenger_ft where username = "Jerry"
+        select * from passenger_ft where username = #{username}
     </select>
 
     <delete id="del">
@@ -14,7 +14,7 @@
 
     <insert id="insert" parameterType="com.xwb.flight.domain.PassengerFt" >
         insert into passenger_ft(pname,cardnum,phone,username,add_time,status)
-        values(#{pname},#{cardnum},#{phone},"Jerry",now(),0);
+        values(#{pname},#{cardnum},#{phone},#{username},now(),0);
     </insert>
 
     <select id="getPassByNameOrPhone" resultType="com.xwb.flight.domain.PassengerFt">

@@ -15,8 +15,10 @@ public class PassengerFtServiceImpl {
     @Autowired@Qualifier("passengerFtMapper")
     private PassengerFtMapper passengerFtMapper;
 
-    public List<PassengerFt> select() {
-        return passengerFtMapper.select();
+    public List<PassengerFt> select(String username) {
+        return passengerFtMapper.select(
+                username
+        );
     }
 
     public void del(Integer pid) {

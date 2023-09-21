@@ -26,8 +26,9 @@ public class PassengerFtController {
     }
 
     @RequestMapping("/list")
-    public String list(Model model) {
-        List<PassengerFt> list = passengerFtService.select();
+    public String list(Model model, HttpSession session) {
+        UserFt user = (UserFt) session.getAttribute("user");
+        List<PassengerFt> list = passengerFtService.select(user.getUsername());
         model.addAttribute("list", list);
         return "passenger/list";
     }
@@ -40,11 +41,13 @@ public class PassengerFtController {
     }
 
     @RequestMapping("/add")
-    public String add(String pname,String cardnum,String phone,Model model){
+    public String add(String pname,String cardnum,String phone,Model model,HttpSession session){
+        UserFt user = (UserFt) session.getAttribute("user");
         PassengerFt passengerFt = new PassengerFt();
         passengerFt.setPname(pname);
         passengerFt.setCardnum(cardnum);
         passengerFt.setPhone(phone);
+        passengerFt.setUsername(user.getUsername());
         passengerFtService.save(passengerFt);
         model.addAttribute("msg","添加成功");
         return "passenger/success";
