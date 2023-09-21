@@ -21,7 +21,7 @@
             <h2>新增旅客</h2>
         </div>
         <div class="subfiled-content">
-            <form class="saper-form" action="add">
+            <form class="saper-form" action="add" onsubmit="return handleSubmit()">
                 <div class="kv-item clearfix">
                     <label>旅客姓名：</label>
                     <div class="kv-item-content">
@@ -64,6 +64,15 @@
 
 <script type="text/javascript">
     $('select').iSelect();
-
+    const handleSubmit = (e)=>{
+       let input= document.querySelector('input[name="cardnum"]');
+        let {value} = input;
+        if(value.length!==18){
+            alert('身份证号码不正确 会导致后续模板渲染出错 ');
+            return false;
+        }else{
+            return true;
+        }
+    }
 </script>
 </html>
