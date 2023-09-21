@@ -42,15 +42,5 @@ public class OrderController {
         return "order/returnurl";
     }
 
-    @RequestMapping("/index")
-    public String index(){
 
-        return "system/index";
-    }
-
-    @RequestMapping("/systemIndex")
-    public String systemIndex(){
-
-        return "system/system_index";
-    }
 }

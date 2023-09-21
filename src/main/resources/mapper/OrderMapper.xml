@@ -24,4 +24,8 @@
     <update id="updateOrderStatusByOidInt">
         update flightorder set order_status = 2 where oid = #{oid};
     </update>
+    <select id="getOrderStatusCountByUsername" resultType="java.lang.Integer" >
+        Select count(1) from flightorder where username = #{name} and order_status =1
+    </select>
+
 </mapper>

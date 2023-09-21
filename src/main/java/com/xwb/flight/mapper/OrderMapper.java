@@ -12,4 +12,6 @@ public interface OrderMapper {
 
 
     public int updateOrderStatusByOidInt(String oid);
+
+    public int getOrderStatusCountByUsername(String name);
 }

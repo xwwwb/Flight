@@ -35,13 +35,13 @@
 
                     <li class="email"><div class="nav-header"><a href="javascript:;" data-src="airport_info.html" class="clearfix"><span>机场信息</span><i class="icon"></i></a></div></li>
                     <li class="email"><div class="nav-header"><a href="javascript:;" data-src="ol_checkin.html" class="clearfix"><span>网上值机</span><i class="icon"></i></a></div></li>
-                    <li class="system"><div class="nav-header"><a href="javascript:;" data-src="pwd_modify.html" class="clearfix"><span>密码修改</span><i class="icon"></i></a></div></li>
+                    <li class="system"><div class="nav-header"><a href="javascript:;" data-src="/user/pwd" class="clearfix"><span>密码修改</span><i class="icon"></i></a></div></li>
                 </ul>
             </div>
             <div class="content">
                 <div class="topbar clearfix">
                     <ul class="user-msg clearfix">
-                        <li><img src="/resources/images/583321.png" alt="">预存款金额<span>0.00元</span>[<a href="javascript:;">充值</a>]</li>
+                        <li><img src="/resources/images/583321.png" alt="">预存款金额<span>${user.balance}</span>[<a href="javascript:;">充值</a>]</li>
                         <li><img src="/resources/images/583349.png" alt="">短信<span>0</span>条[<a href="javascript:;">购买</a>]</li>
                         <li><img src="/resources/images/583450.png" alt="">行程单<span>0</span>份[<a href="javascript:;">购买</a>]</li>
                         <li><img src="/resources/images/583468.png" alt="">保险[<a href="javascript:;">购买</a>]</li>
@@ -53,7 +53,7 @@
                         <a class="qq" href="javascript:;"><img src="../images/QQ.png" alt="">QQ客户</a>
                     </div>
                 </div>
-                <iframe src="../order/systemIndex" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
+                <iframe src="../system/systemIndex" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
             </div>
         </div>
     </div>

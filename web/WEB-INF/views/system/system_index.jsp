@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/system_index.css" />
     <script type="text/javascript" src="/resources/common/js/jquery.js"></script>
     <script type="text/javascript" src="/resources/common/js/sapar.js"></script>
-    <script type="text/javascript" src="/resources/js/WdatePicker.js"></script>
+    <script type="text/javascript" src=" /resources/js/WdatePicker.js"></script>
     <title>系统首页</title>
 </head>
 
@@ -160,7 +160,7 @@
 
                         <ul class="qlink_list">
                             <li class="list"><a href="#">订单搜索</a></li>
-                            <li class="list"><a href="#">待付订单</a><span class="impInfo">(10)</span></li>
+                            <li class="list"><a href="#">待付订单</a><span class="impInfo">(${orderCount})</span></li>
                             <li class="list"><a href="#">订单统计</a></li>
                         </ul>
                     </div>

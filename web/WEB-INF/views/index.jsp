@@ -38,7 +38,7 @@
             </div>
             <div class="toolbar">
                 <div class="login-info clearfix">
-                    <div class="welcome clearfix"><span>欢迎您,</span><a href="javascript:;" class="user-name">Admin</a></div>
+                    <div class="welcome clearfix"><span>欢迎您,</span><a href="javascript:;" class="user-name">${user.username}</a></div>
                     <div class="login-msg clearfix">
                         <a href="javascript:;" class="msg-txt">消息</a>
                         <a href="javascript:;" class="msg-num">10</a>
@@ -57,7 +57,7 @@
         <div class="wrap clearfix">
 
 
-            <iframe src="../order/index" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
+            <iframe src="../system/index" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
         </div>
     </div>
     <div id="ft" class="clearfix">

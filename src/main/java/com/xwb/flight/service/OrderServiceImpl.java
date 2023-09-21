@@ -52,4 +52,8 @@ public class OrderServiceImpl {
     public int updateOrderStatusByOidInt(String oid){
         return orderMapper.updateOrderStatusByOidInt(oid);
     }
+
+    public int getOrderStatusCountByUsername(String name){
+        return orderMapper.getOrderStatusCountByUsername(name);
+    }
 }
