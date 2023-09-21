@@ -1,6 +1,7 @@
 package com.xwb.flight.controller;
 
 import com.xwb.flight.domain.Order;
+import com.xwb.flight.domain.UserFt;
 import com.xwb.flight.service.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -16,7 +18,14 @@ import javax.servlet.http.HttpSession;
 public class OrderController {
     @Autowired
     OrderServiceImpl orderServiceImpl;
-
+    @RequestMapping("/myOrder")
+    public String myOrder(Order order, HttpSession session, Model model){
+        UserFt user = (UserFt) session.getAttribute("user");
+        order.setUsername(user.getUsername());
+        List<Order> list = orderServiceImpl.getOrderByUsernameAndOther(order);
+        model.addAttribute("list",list);
+        return "flight/myOrder";
+    }
     @RequestMapping("/step3")
     public String step3(int fid,int pid,Model model){
 

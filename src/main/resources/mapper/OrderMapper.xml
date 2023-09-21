@@ -8,8 +8,16 @@
     <resultMap id="order_pass_flight" type="com.xwb.flight.domain.Order" autoMapping="true">
         <id column="oid" property="oid"/>
         <result column="order_amount" property="orderAmount"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="order_status" property="orderStatus"/>
         <association property="flight" javaType="com.xwb.flight.domain.Flight" autoMapping="true">
             <id column="fid" property="fid"/>
+            <id column="flight_num" property="flightNum"/>
+            <id column="flight_date" property="flightDate"/>
+            <id column="departure_city" property="departureCity"/>
+            <id column="arrival_city" property="arrivalCity"/>
+            <id column="ticket_price" property="ticketPrice"/>
+            <id column="ticket_left" property="ticketLeft"/>
         </association>
         <association property="passengerFt" javaType="com.xwb.flight.domain.PassengerFt" autoMapping="true">
             <id column="pid" property="pid"/>
@@ -27,5 +35,31 @@
     <select id="getOrderStatusCountByUsername" resultType="java.lang.Integer" >
         Select count(1) from flightorder where username = #{name} and order_status =1
     </select>
+    <select id="getOrderByUsernameAndOther" resultMap="order_pass_flight">
 
+        select * from flightorder fo,flight f,passenger_ft pft
+        <where>
+            fo.fid = f.fid
+            and  fo.pid = pft.pid
+            <!-- # 必要条件：有当前用户的用户名 -->
+            and fo.username = #{username}
+            <!--# 非必要条件1 订单号：如果用户输入了则加上 否则就不加  if-->
+            <if test="oid != null and oid != ''">
+                and  fo.oid = #{oid}
+            </if>
+            <!--# 非必要条件2 订单状态：如果用户输入了则加上 否则就不加-->
+            <if test="orderStatus != null and orderStatus != 0">
+                and fo.order_status = #{orderStatus}
+            </if>
+            <!--# 非必要条件3 乘坐人：如果用户输入了则加上 否则就不加-->
+            <if test="passengerFt != null and passengerFt.pname != null and passengerFt.pname != '' ">
+                and pft.pname = #{passengerFt.pname}
+            </if>
+            <!--# 非必要条件4 航班时间：如果用户输入了则加上 否则就不加-->
+            <if test="flight != null and flight.flightDate != null">
+                and f.flight_date = #{flight.flightDate}
+            </if>
+
+        </where>
+    </select>
 </mapper>

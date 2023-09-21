@@ -23,7 +23,7 @@
 
                     <li class="email">
                         <div class="nav-header">
-                            <a href="javascript:;" data-src="my_order.html" class="clearfix">
+                            <a href="javascript:;" data-src="../order/myOrder" class="clearfix">
                                 <span>我的订单</span>
                                 <i class="icon"></i>
                             </a>

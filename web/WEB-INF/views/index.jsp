@@ -20,8 +20,9 @@
                 <li class="current" data-src="/system/index"><a href="javascript:;">系统</a></li>
                 <li data-src="/passengerFt/pindex"><a href="javascript:;">用户</a></li>
                 <li data-src="/flight/findex"><a href="javascript:;">机票</a></li>
+                <li data-src="/flight/findex"><a href="javascript:;">行程单</a></li>
                 <li data-src="static/msg/index.html"><a href="javascript:;">短信</a></li>
-                <li data-src="static/xingchengdan/index.html"><a href="javascript:;">行程单</a></li>
+
                 <li data-src="static/insurance/index.html"><a href="javascript:;">保险</a></li>
                 <li data-src="static/caiwu/index.html"><a href="javascript:;">财务</a></li>
             </ul>

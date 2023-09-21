@@ -160,7 +160,7 @@
 
                         <ul class="qlink_list">
                             <li class="list"><a href="#">订单搜索</a></li>
-                            <li class="list"><a href="#">待付订单</a><span class="impInfo">(${orderCount})</span></li>
+                            <li class="list"><a href="../order/myOrder?orderStatus=1">待付订单</a><span class="impInfo">(${orderCount})</span></li>
                             <li class="list"><a href="#">订单统计</a></li>
                         </ul>
                     </div>

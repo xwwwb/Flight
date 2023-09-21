@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.xwb.flight.domain.Order;
+
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -55,5 +57,10 @@ public class OrderServiceImpl {
 
     public int getOrderStatusCountByUsername(String name){
         return orderMapper.getOrderStatusCountByUsername(name);
+    }
+
+    public List<Order> getOrderByUsernameAndOther(Order order){
+        List<Order> list = orderMapper.getOrderByUsernameAndOther(order);
+        return list;
     }
 }
