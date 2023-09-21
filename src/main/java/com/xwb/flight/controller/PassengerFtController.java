@@ -1,6 +1,7 @@
 package com.xwb.flight.controller;
 
 import com.xwb.flight.domain.PassengerFt;
+import com.xwb.flight.domain.UserFt;
 import com.xwb.flight.service.PassengerFtServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -16,6 +18,12 @@ public class PassengerFtController {
 
     @Autowired@Qualifier("passengerFtService")
     private PassengerFtServiceImpl passengerFtService;
+    @RequestMapping("/pindex")
+    public String pindex(HttpSession session, Model model){
+        UserFt user = (UserFt) session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "passenger/pindex";
+    }
 
     @RequestMapping("/list")
     public String list(Model model) {

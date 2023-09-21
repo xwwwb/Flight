@@ -5,4 +5,8 @@
     <select id="getUserFtByUsernameAndPassword" resultType="com.xwb.flight.domain.UserFt">
         SELECT * FROM `user_ft` where username =#{username} and password = #{password}
     </select>
+
+    <update id="updatePwdByUsernameAndPwd">
+        update user_ft set password  = #{newPwd} where username =#{username} and `password` = #{password}
+    </update>
 </mapper>

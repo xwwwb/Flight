@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Param;
 public interface UserMapper {
 
     public UserFt getUserFtByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    public int updatePwdByUsernameAndPwd(@Param("username") String username, @Param("password") String password,@Param("newPwd") String newPwd);
 }

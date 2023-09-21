@@ -27,34 +27,35 @@
             <h2>修改密码</h2>
         </div>
         <div class="subfiled-content">
-            <form class="saper-form">
+            <form class="saper-form" action="../user/updatePwd" >
                 <div class="kv-item clearfix">
                     <label>用户名：</label>
                     <div class="kv-item-content">
-                        <div class="user-name" style="line-height:30px;">${user.username}</div>
+                        <div class="user-name" style="line-height:30px;">${user.username}</div>  <input type="hidden" name="username" value="${user.username}">
+
                     </div>
                 </div>
                 <div class="kv-item clearfix">
                     <label><span class="impInfo">*</span>原密码：</label>
                     <div class="kv-item-content">
-                        <input type="text" placeholder="原密码">
+                        <input type="text" name="password" placeholder="原密码">
                     </div>
                 </div>
                 <div class="kv-item clearfix">
                     <label><span class="impInfo">*</span>新密码：</label>
                     <div class="kv-item-content">
-                        <input type="text" placeholder="新密码">
+                        <input type="text" name="newPwd1" placeholder="新密码">
                     </div>
                 </div>
                 <div class="kv-item clearfix">
                     <label><span class="impInfo">*</span>确认密码：</label>
                     <div class="kv-item-content">
-                        <input type="text" placeholder="确认密码">
+                        <input type="text" name="newPwd2" placeholder="确认密码">
                     </div>
                 </div>
 
                 <div class="buttons">
-                    <a href="javascript:;" class="sapar-btn sapar-btn-recom">确定</a>
+                    <input type="submit" value="确定" class="sapar-btn sapar-btn-recom"/>
                 </div>
             </form>
         </div>

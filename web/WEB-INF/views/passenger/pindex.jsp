@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: fei
-  Date: 2023/9/18
-  Time: 10:00
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +6,7 @@
     <link rel="stylesheet" href="/resources/common/css/sapar.css" />
     <link rel="stylesheet" href="/resources/css/index_inner.css" />
 
-    <title>系统</title>
+    <title>用户</title>
 </head>
 
 <body>
@@ -23,19 +16,9 @@
             <div class="sidebar">
                 <h2 class="sidebar-header"><p>功能导航</p></h2>
                 <ul class="nav">
-                    <li class="office current"><div class="nav-header"><a href="javascript:;" data-src="../system/systemIndex" class="clearfix"><span>系统首页</span><i class="icon"></i></a></div></li>
-                    <li class="gongwen"><div class="nav-header"><a href="javascript:;" data-src="my_info.html" class="clearfix"><span>我的资料信息</span><i class="icon"></i></a></div></li>
+                    <li class="gongwen current"><div class="nav-header"><a href="javascript:;" data-src="list" class="clearfix"><span>常旅客管理</span><i class="icon"></i></a></div></li>
+                    <li class="office"><div class="nav-header"><a href="javascript:;" data-src="" class="clearfix"><span>员工管理</span><i class="icon"></i></a></div></li>
 
-                    <li class="konwledge">
-                        <div class="nav-header">
-                            <a href="javascript:;" data-src="login_times.html" class="clearfix"><span>登录记录查看</span><i class="icon"></i>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li class="email"><div class="nav-header"><a href="javascript:;" data-src="airport_info.html" class="clearfix"><span>机场信息</span><i class="icon"></i></a></div></li>
-                    <li class="email"><div class="nav-header"><a href="javascript:;" data-src="ol_checkin.html" class="clearfix"><span>网上值机</span><i class="icon"></i></a></div></li>
-                    <li class="system"><div class="nav-header"><a href="javascript:;" data-src="/user/pwd" class="clearfix"><span>密码修改</span><i class="icon"></i></a></div></li>
                 </ul>
             </div>
             <div class="content">
@@ -53,14 +36,14 @@
                         <a class="qq" href="javascript:;"><img src="/resources/images/QQ.png" alt="">QQ客户</a>
                     </div>
                 </div>
-                <iframe src="../system/systemIndex" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
+                <iframe src="list" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
             </div>
         </div>
     </div>
 </div>
 </body>
-<script type="text/javascript" src="/resources/js/jquery.js"></script>
-<script type="text/javascript" src="/resources/common/js/sapar.js"></script>
+<script type="text/javascript" src="/resources/common/js/jquery.js"></script>
+<script type="text/javascript" src="/resources/js/sapar.js"></script>
 <script type="text/javascript" src="/resources/js/index_inner.js"></script>
 
 </html>

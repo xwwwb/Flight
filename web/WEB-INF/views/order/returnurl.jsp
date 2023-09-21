@@ -58,7 +58,7 @@
                     您的机票预订成功！
                 </div>
                 <div>
-                    请到<a href="my_order.html">我的订单</a>中查看机票
+                    <a href="/" >回到主页</a>
                 </div>
             </div>
 

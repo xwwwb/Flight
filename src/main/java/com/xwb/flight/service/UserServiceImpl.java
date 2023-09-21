@@ -14,4 +14,8 @@ public class UserServiceImpl {
     public UserFt getUserFtByUsernameAndPassword(String username, String password){
         return userMapper.getUserFtByUsernameAndPassword(username, password);
     }
+
+    public int updatePwdByUsernameAndPwd(String username,String password,String newPwd){
+        return userMapper.updatePwdByUsernameAndPwd(username, password, newPwd);
+    }
 }
