@@ -41,4 +41,16 @@ public class OrderController {
         int i = orderServiceImpl.updateOrderStatusByOidInt(oid);
         return "order/returnurl";
     }
+
+    @RequestMapping("/index")
+    public String index(){
+
+        return "system/index";
+    }
+
+    @RequestMapping("/systemIndex")
+    public String systemIndex(){
+
+        return "system/system_index";
+    }
 }
