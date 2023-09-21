@@ -32,8 +32,12 @@
             </if>
         </where>
     </select>
-
-    <select id="getPassengerFtByUsername" resultType="com.xwb.flight.domain.PassengerFt">
+    <resultMap id="map_passengerFt_userFt" type="com.xwb.flight.domain.PassengerFt" autoMapping="true" >
+        <association property="userFt" javaType="com.xwb.flight.domain.UserFt">
+            <id property="username" column="username"/>
+        </association>
+    </resultMap>
+    <select id="getPassengerFtByUsername" resultType="com.xwb.flight.domain.PassengerFt" resultMap="map_passengerFt_userFt">
         select * from passenger_ft where username = #{username}
     </select>
 
